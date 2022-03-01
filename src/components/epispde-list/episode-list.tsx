@@ -22,7 +22,7 @@ export default function CharacterList() {
 
   return (
     <>
-      <h1>Episode List List</h1>
+      <h1>Episode List</h1>
       <Table dataSource={episode}>
         <Column title="Name" dataIndex="name" key="name" />
         <Column title="Air-Date" dataIndex="air_date" key="species" />
