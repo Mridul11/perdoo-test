@@ -5,7 +5,6 @@ import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../config';
 import { GET_CHARACTERS } from '../../utils/queries';
-import Apperror from '../error-component/app-error';
 import Loader from '../loader/loader';
 
 export default function CharacterList() {
@@ -18,10 +17,9 @@ export default function CharacterList() {
   }, [data]);
 
   if (loading) return <Loader />;
-  if (error) return <Apperror />;
 
   return (
-    <>
+    <div data-testid="test-list">
       <h1>Character List</h1>
       <Table dataSource={character}>
         <Column title="Name" dataIndex="name" key="name" />
@@ -40,6 +38,6 @@ export default function CharacterList() {
           }}
         ></Column>
       </Table>
-    </>
+    </div>
   );
 }

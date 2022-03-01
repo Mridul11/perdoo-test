@@ -1,7 +1,25 @@
-import { render } from '@testing-library/react';
+import { MockedProvider } from '@apollo/client/testing';
+import { render, waitFor } from '@testing-library/react';
 import Homepage from './home-page';
+import { AppContext } from '../../config';
+import {
+  charactersAppState,
+  episodesAppState,
+  locationsAppState,
+  navbarAppState
+} from '../../config/context';
 
-test('test if homepage is rendering', () => {
-  const { getByText } = render(<Homepage />);
-  expect(getByText('Homepage')).toBeInTheDocument();
+test('test if homepage is rendering', async () => {
+  const { getByText } = await waitFor(() =>
+    render(
+      <MockedProvider>
+        <AppContext.Provider
+          value={{ navbarAppState, charactersAppState, locationsAppState, episodesAppState }}
+        >
+          <Homepage />
+        </AppContext.Provider>
+      </MockedProvider>
+    )
+  );
+  expect(getByText('App HomePage')).toBeInTheDocument();
 });

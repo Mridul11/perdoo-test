@@ -14,14 +14,19 @@ export default function CharacterDetail() {
   });
 
   if (loading) return <Loader />;
-  if (error) return <Apperror />;
 
+  const { character } = data || { character: { name: '', image: '', species: '', status: '' } };
   return (
     <div>
-      <Card style={{ width: 300 }} cover={<img alt="example" src={`${data.character.image}`} />}>
-        <Meta title={data ? data.character.name : ''} />
-        <Meta description={data ? data.character.species : ''} />
-        <Meta description={data ? data.character.status : ''} />
+      <h1>Character Detail</h1>
+      <Card
+        style={{ width: 300 }}
+        cover={<img alt="example" src={`${character.image}`} />}
+        data-testid="test-character-detail"
+      >
+        <Meta title={character.name} />
+        <Meta description={character.species} />
+        <Meta description={character.status} />
       </Card>
       ,
     </div>
