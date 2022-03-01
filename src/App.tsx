@@ -1,11 +1,10 @@
 import './App.css';
-import { Homepage } from './pages';
+import { AppRouter } from './config';
 
 function App() {
   return (
     <div className="App">
-      AppCpmpo
-      <Homepage />
+      <AppRouter />
     </div>
   );
 }
