@@ -1,3 +1,4 @@
-export default () => {
-  console.log('fill with the code!!!');
-};
+import AppRouter from './routes';
+import AppApolloClient from './apollo-client';
+
+export { AppRouter, AppApolloClient };
