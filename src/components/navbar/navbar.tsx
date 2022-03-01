@@ -16,6 +16,7 @@ const Navbar = () => {
   const handleClick = (e: MenuButtonProps) => {
     currentSet(e.key);
   };
+  console.log(current);
   return (
     <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
       <Menu.Item key="character" icon={<RedditOutlined />} onClick={() => navigate('/')}>
