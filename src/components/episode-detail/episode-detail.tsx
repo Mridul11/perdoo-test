@@ -3,7 +3,6 @@ import { Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import { useParams } from 'react-router-dom';
 import { GET_EPISODES_DETAIL } from '../../utils/queries';
-import Apperror from '../error-component/app-error';
 import Loader from '../loader/loader';
 
 export default function EpisodeDetail() {
@@ -14,14 +13,14 @@ export default function EpisodeDetail() {
   });
 
   if (loading) return <Loader />;
-  if (error) return <Apperror />;
-
+  const { episode } = data || { episode: { name: '', air_date: '', created: '' } };
   return (
     <div>
-      <Card style={{ width: 300 }}>
-        <Meta title={data.episode.name} />
-        <Meta description={data.episode.air_date} />
-        <Meta description={data.episode.created} />
+      <h1>Episode Detail</h1>
+      <Card style={{ width: 300 }} data-testid="test-episode-detail">
+        <Meta title={episode.name} />
+        <Meta description={episode.air_date} />
+        <Meta description={episode.created} />
       </Card>
       ,
     </div>

@@ -3,7 +3,6 @@ import { Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import { useParams } from 'react-router-dom';
 import { GET_LOCATIONS_DETAIL } from '../../utils/queries';
-import Apperror from '../error-component/app-error';
 import Loader from '../loader/loader';
 
 export default function LocationDetail() {
@@ -14,17 +13,17 @@ export default function LocationDetail() {
   });
 
   if (loading) return <Loader />;
-  if (error) return <Apperror />;
 
+  const { location } = data || { location: { name: '', type: '', dimension: '', created: '' } };
   return (
-    <div>
-      <Card style={{ width: 300 }}>
-        <Meta title={data.location.name} />
-        <Meta description={data.location.created} />
-        <Meta description={data.location.dimension} />
-        <Meta description={data.location.type} />
+    <>
+      <h1>Location Detail</h1>
+      <Card style={{ width: 300 }} data-testid="test-location-detail">
+        <Meta title={location.name} />
+        <Meta description={location.created} />
+        <Meta description={location.dimension} />
+        <Meta description={location.type} />
       </Card>
-      ,
-    </div>
+    </>
   );
 }

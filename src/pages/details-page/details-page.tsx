@@ -1,7 +1,5 @@
 import { useContext } from 'react';
-import { Apperror, CharacterDetail } from '../../components';
-import EpisodeDetail from '../../components/episode-detail/episode-detail';
-import LocationDetail from '../../components/location-detail/location-detail';
+import { EpisodeDetail, LocationDetail, CharacterDetail } from '../../components';
 import { AppContext } from '../../config';
 
 export default function Detailspage() {
@@ -12,5 +10,5 @@ export default function Detailspage() {
   if (current === 'location') return <LocationDetail />;
   if (current === 'episode') return <EpisodeDetail />;
 
-  return <Apperror />;
+  return <p>App Details Page</p>;
 }

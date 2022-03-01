@@ -18,14 +18,29 @@ const Navbar = () => {
   };
   console.log(current);
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-      <Menu.Item key="character" icon={<RedditOutlined />} onClick={() => navigate('/')}>
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" data-testid="test-menu">
+      <Menu.Item
+        key="character"
+        icon={<RedditOutlined />}
+        onClick={() => navigate('/')}
+        data-testid="test-character"
+      >
         Characters
       </Menu.Item>
-      <Menu.Item key="location" icon={<GlobalOutlined />} onClick={() => navigate('/')}>
+      <Menu.Item
+        key="location"
+        icon={<GlobalOutlined />}
+        onClick={() => navigate('/')}
+        data-testid="test-location"
+      >
         Location
       </Menu.Item>
-      <Menu.Item key="episode" icon={<PlaySquareOutlined />} onClick={() => navigate('/')}>
+      <Menu.Item
+        key="episode"
+        icon={<PlaySquareOutlined />}
+        onClick={() => navigate('/')}
+        data-testid="test-episode"
+      >
         Episode
       </Menu.Item>
     </Menu>
