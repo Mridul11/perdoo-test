@@ -1,3 +1,9 @@
+import { Spin } from 'antd';
+
 export default function Loader() {
-  return <div>Loader</div>;
+  return (
+    <div data-testid="spinner">
+      <Spin size="large" />
+    </div>
+  );
 }
