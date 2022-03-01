@@ -9,6 +9,9 @@ This project is bootstrapped with [Create React App](https://github.com/facebook
 - This app is deployed on the netlify.com platform. you can check the live website here.
 [LIVE-WEBAPP](https://friendly-leakey-6c093a.netlify.app/)
 
+### Open PR:
+- I have also opened another PR where i have not used context for the `location`, `character` and `episodes` but only for `navbar`. Here is the link for that [PR](https://github.com/Mridul11/perdoo-test/pull/5) . Also [this](https://deploy-preview-5--friendly-leakey-6c093a.netlify.app/) is the [preview](https://deploy-preview-5--friendly-leakey-6c093a.netlify.app/) for [this open PR](https://github.com/Mridul11/perdoo-test/pull/5).
+
 ## Available Scripts
 
 In the project directory, you can run:
