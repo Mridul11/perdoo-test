@@ -1,8 +1,10 @@
-import { findByText, render, waitFor } from '@testing-library/react';
+import { cleanup, findByText, render, waitFor } from '@testing-library/react';
 import CharacterList from './character-list';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_CHARACTERS } from '../../utils/queries';
 import { BrowserRouter } from 'react-router-dom';
+
+afterEach(cleanup);
 
 test('should render', async () => {
   const { getByTestId } = await waitFor(() =>

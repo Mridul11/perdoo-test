@@ -1,8 +1,10 @@
-import { render, waitFor } from '@testing-library/react';
+import { cleanup, render, waitFor } from '@testing-library/react';
 import LocationList from './location-list';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_LOCATIONS } from '../../utils/queries';
 import { BrowserRouter } from 'react-router-dom';
+
+afterEach(cleanup);
 
 test('should render', () => {
   const { getByTestId } = render(

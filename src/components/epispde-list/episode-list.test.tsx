@@ -1,8 +1,10 @@
-import { render, waitFor } from '@testing-library/react';
+import { cleanup, render, waitFor } from '@testing-library/react';
 import EpisodeList from './episode-list';
 import { MockedProvider } from '@apollo/client/testing';
 import { GET_EPISODES } from '../../utils/queries';
 import { BrowserRouter } from 'react-router-dom';
+
+afterEach(cleanup);
 
 test('should render in document', async () => {
   const { getByTestId } = await waitFor(() =>
@@ -15,38 +17,6 @@ test('should render in document', async () => {
 
   const textElement = getByTestId('spinner');
   expect(textElement).toBeInTheDocument();
-});
-
-test('should render episode list', async () => {
-  const episodeMock = [
-    {
-      request: {
-        query: GET_EPISODES
-      },
-      results: {
-        data: {
-          episodes: {
-            data: { id: '1', name: 'Marty', air_date: Date.now() }
-          }
-        }
-      }
-    }
-  ];
-
-  const { getByTestId } = await waitFor(() =>
-    render(
-      <MockedProvider mocks={episodeMock} addTypename={false}>
-        <BrowserRouter>
-          <EpisodeList />
-        </BrowserRouter>
-      </MockedProvider>
-    )
-  );
-
-  await new Promise((resolve) => setTimeout(resolve, 0));
-
-  // const textElement = getByTestId('test-episodelist');
-  // expect(textElement).toBeInTheDocument();
 });
 
 test('should render character list', async () => {
