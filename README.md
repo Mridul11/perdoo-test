@@ -1,6 +1,13 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) wtih addition eslint and prettier setup with husky git hook.
+This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app) wtih typescript template in addition [eslint](https://www.npmjs.com/package/eslint) and [prettier](https://www.npmjs.com/package/prettier) setup with [husky](https://www.npmjs.com/package/husky) git hook. This app also uses [react-router-dom@v6], [react-testing-library] and [jest] for testing. 
+
+*** This app is completely unit tested with jest and react-testing-library. ***
+
+
+### Live website
+- This app is deployed on the netlify.com platform. you can check the live website here.
+[LIVE-WEBAPP](https://friendly-leakey-6c093a.netlify.app/)
 
 ## Available Scripts
 
@@ -38,3 +45,13 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+
+### `yarn lint:fix`
+- It formats the the eslint according to the rules provided in the [eslintrc.js].
+
+### `yarn format`
+- This commands formats the files using prettier plugin as per the prettierrc rules.
+
+### `yarn version`
+- This command automatically takes the commit and as per the given version, creates a version log in CHANGELOG.md file for better reference.
