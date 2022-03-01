@@ -24,7 +24,7 @@
   "scripts": {
     "start": "yarn format && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "lint": "eslint .",

@@ -1,18 +1,18 @@
 import { createContext } from 'react';
 
-const navbarAppState: [string, React.Dispatch<React.SetStateAction<string>>] = [
+export const navbarAppState: [string, React.Dispatch<React.SetStateAction<string>>] = [
   '',
   (state: any) => state
 ];
-const charactersAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
+export const charactersAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
   [],
   (state: any) => state
 ];
-const locationsAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
+export const locationsAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
   [],
   (state: any) => state
 ];
-const episodesAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
+export const episodesAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = [
   [],
   (state: any) => state
 ];

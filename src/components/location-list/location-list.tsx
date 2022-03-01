@@ -5,10 +5,9 @@ import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../config';
 import { GET_LOCATIONS } from '../../utils/queries';
-import Apperror from '../error-component/app-error';
 import Loader from '../loader/loader';
 
-export default function CharacterList() {
+export default function LocationList() {
   const { locationsAppState } = useContext(AppContext);
   const [location, locationStateSet] = locationsAppState;
   const { loading, data, error } = useQuery(GET_LOCATIONS);
@@ -18,19 +17,13 @@ export default function CharacterList() {
   }, [data]);
 
   if (loading) return <Loader />;
-  if (error) return <Apperror />;
 
   return (
     <>
       <h1>Location List</h1>
-      <Table dataSource={location}>
+      <Table dataSource={location} data-testid="test-episodelist">
         <Column title="Name" dataIndex="name" key="name" />
         <Column title="Type" dataIndex="type" key="type" />
-        {/* <Column
-          title="Resident Name"
-          render={(location) => location.residents.name}
-          key="species"
-        /> */}
         <Column title="Dimension" dataIndex="dimension" key="dimension" />
         <Column title="Created" dataIndex="created" key="created" />
         <Column

@@ -18,6 +18,7 @@ export default function CharacterDetail() {
 
   return (
     <div>
+      <h1>Character Detail</h1>
       <Card style={{ width: 300 }} cover={<img alt="example" src={`${data.character.image}`} />}>
         <Meta title={data ? data.character.name : ''} />
         <Meta description={data ? data.character.species : ''} />
