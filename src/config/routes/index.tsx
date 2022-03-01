@@ -9,14 +9,9 @@ import AppContext from '../context';
 const AppRouter = () => {
   const navbarAppState: [string, React.Dispatch<React.SetStateAction<string>>] =
     useState('character');
-  const locationsAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = useState([]);
-  const episodesAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = useState([]);
-  const charactersAppState: [[], React.Dispatch<React.SetStateAction<[]>>] = useState([]);
   return (
     <ApolloProvider client={AppApolloClient}>
-      <AppContext.Provider
-        value={{ navbarAppState, locationsAppState, episodesAppState, charactersAppState }}
-      >
+      <AppContext.Provider value={{ navbarAppState }}>
         <Router>
           <Navbar />
           <Routes>

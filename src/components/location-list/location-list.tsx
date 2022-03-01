@@ -1,27 +1,32 @@
 import { useQuery } from '@apollo/client';
 import { Table, Button } from 'antd';
 import Column from 'antd/lib/table/Column';
-import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../../config';
 import { GET_LOCATIONS } from '../../utils/queries';
 import Loader from '../loader/loader';
 
 export default function LocationList() {
-  const { locationsAppState } = useContext(AppContext);
-  const [location, locationStateSet] = locationsAppState;
-  const { loading, data, error } = useQuery(GET_LOCATIONS);
-
-  useEffect(() => {
-    data ? locationStateSet(data.locations.results) : [];
-  }, [data]);
+  const { loading, data } = useQuery(GET_LOCATIONS);
 
   if (loading) return <Loader />;
+
+  const dataItems = data || {
+    locations: {
+      results: [
+        {
+          name: '',
+          type: '',
+          dimension: '',
+          created: ''
+        }
+      ]
+    }
+  };
 
   return (
     <>
       <h1>Location List</h1>
-      <Table dataSource={location} data-testid="test-episodelist">
+      <Table dataSource={dataItems.locations.results} data-testid="test-episodelist">
         <Column title="Name" dataIndex="name" key="name" />
         <Column title="Type" dataIndex="type" key="type" />
         <Column title="Dimension" dataIndex="dimension" key="dimension" />
