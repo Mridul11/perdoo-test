@@ -1,13 +1,13 @@
 # Getting Started with Create React App
 
-This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app) wtih typescript template in addition [eslint](https://www.npmjs.com/package/eslint) and [prettier](https://www.npmjs.com/package/prettier) setup with [husky](https://www.npmjs.com/package/husky) git hook. This app also uses [react-router-dom@v6], [react-testing-library] and [jest] for testing. 
+This project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app) wtih typescript template in addition [eslint](https://www.npmjs.com/package/eslint) and [prettier](https://www.npmjs.com/package/prettier) setup with [husky](https://www.npmjs.com/package/husky) git hook. This app also uses [react-router-dom@v6], [react-testing-library] and [jest] for testing.
 
-*** This app is completely unit tested with jest and react-testing-library. ***
-
+**_ This app is completely unit tested with jest and react-testing-library. _**
 
 ### Live website
+
 - This app is deployed on the netlify.com platform. you can check the live website here.
-[LIVE-WEBAPP](https://friendly-leakey-6c093a.netlify.app/)
+  [LIVE-WEBAPP](https://friendly-leakey-6c093a.netlify.app/)
 
 ### Open PR:
 - I have also opened another PR where i have not used context for the `location`, `character` and `episodes` but only for `navbar`. Here is the link for that [PR](https://github.com/Mridul11/perdoo-test/pull/5) . Also [this](https://deploy-preview-5--friendly-leakey-6c093a.netlify.app/) is the [preview](https://deploy-preview-5--friendly-leakey-6c093a.netlify.app/) for [this open PR](https://github.com/Mridul11/perdoo-test/pull/5).
@@ -49,12 +49,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-
 ### `yarn lint:fix`
+
 - It formats the the eslint according to the rules provided in the [eslintrc.js].
 
 ### `yarn format`
+
 - This commands formats the files using prettier plugin as per the prettierrc rules.
 
 ### `yarn version`
+
 - This command automatically takes the commit and as per the given version, creates a version log in CHANGELOG.md file for better reference.

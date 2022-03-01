@@ -41,14 +41,12 @@ test('should render location list', async () => {
     }
   ];
 
-  const { findByTestId, findByText } = await waitFor(() =>
-    render(
-      <MockedProvider mocks={characterMocks} addTypename={false}>
-        <BrowserRouter>
-          <LocationList />
-        </BrowserRouter>
-      </MockedProvider>
-    )
+  const { findByTestId, findByText } = render(
+    <MockedProvider mocks={characterMocks} addTypename={false}>
+      <BrowserRouter>
+        <LocationList />
+      </BrowserRouter>
+    </MockedProvider>
   );
 
   const textElement = await findByText('Location List');
